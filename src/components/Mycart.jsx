@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import useCart from '../contexts/Cart'
 function Mycart() {
     const cart= useCart()
-    const total=cart.items.reduce((sum,item)=> sum+item.price,0) ;
+    // const total=cart.items.reduce((sum,item)=> sum+item.price,0) ;
     return (
         <div className="card mb-3" style={{ width: '18rem' }}>
         
@@ -11,7 +11,7 @@ function Mycart() {
                 {
                     cart && cart.items.map((item)=><li>{item.name}-{item.price}</li> )
                 }
-                <h5>Total Price - {total}</h5>
+                <h5>Total Price - {cart.total}</h5>
                 
             </div>
         </div>
