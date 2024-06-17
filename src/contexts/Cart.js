@@ -1,10 +1,9 @@
 import { createContext, useContext } from "react";
 
 export const Cartcontext=createContext({
-    items: [],
-    total: 0,
-    setItems: () => {},
-    setTotal: ()=>{},
+    items: [], 
+    addItems: () => {},
+    
 })
 
 export const Cartprovider= Cartcontext.Provider;

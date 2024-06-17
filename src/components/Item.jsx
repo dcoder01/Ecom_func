@@ -2,12 +2,12 @@ import React from 'react';
 import useCart from '../contexts/Cart';
 
 function Item({ name, price }) {
-    const cart = useCart();
-    console.log(cart);
+    const {addItems}= useCart();
+    // console.log(cart);
     const handleAddToCart = () => {
        
-        cart.setItems([...cart.items, { name: name, price: price }]);
-        cart.setTotal(cart.total + price);
+       addItems(name, price);
+       
     };
 
     return (

@@ -6,10 +6,15 @@ import { Cartprovider } from "./contexts/Cart";
 function App() {
 
   const [items, setItems] = useState([]);
-  const [total, setTotal] = useState(0)
+  const addItems=(name, price)=>{
+    setItems((prev)=>(
+      [...prev,{ name: name, price: price }]
+    ))
+  }
+
   return (
 
-    <Cartprovider value={{ items, setItems, total,setTotal }}>
+    <Cartprovider value={{ items, addItems }}>
       <div className="d-flex flex-column justify-content-center align-items-center">
         <Item name="LG TV" price={15000} />
         <Item name="laptop" price={70000} />
